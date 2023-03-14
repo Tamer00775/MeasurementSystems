@@ -34,7 +34,7 @@ public class Measurement implements Serializable{
     @JoinColumn(name="sensor", referencedColumnName = "name")
     private Sensor sensor;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -42,7 +42,7 @@ public class Measurement implements Serializable{
         this.id = id;
     }
 
-    public double getValue() {
+    public Double getValue() {
         return value;
     }
 
@@ -50,7 +50,7 @@ public class Measurement implements Serializable{
         this.value = value;
     }
 
-    public boolean isRaining() {
+    public Boolean isRaining() {
         return raining;
     }
 

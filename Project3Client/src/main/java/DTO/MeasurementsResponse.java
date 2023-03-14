@@ -1,13 +1,11 @@
-package kz.kartayev.Project3Client.DTO;
-
-
+package DTO;
 
 import java.util.List;
 
-public class MeasurementResponse {
+public class MeasurementsResponse {
     private List<MeasurementDTO> measurements;
 
-    public MeasurementResponse(List<MeasurementDTO> measurements) {
+    public MeasurementsResponse(List<MeasurementDTO> measurements) {
         this.measurements = measurements;
     }
 

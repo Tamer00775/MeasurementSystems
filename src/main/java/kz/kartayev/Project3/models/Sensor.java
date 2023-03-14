@@ -13,7 +13,7 @@ public class Sensor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private int id;
+    private Integer id;
     @Column(name="name")
     @NotEmpty(message = "name should be not empty!")
     @Size(min = 2, max = 30,  message = "Name characters should be greater or equal than 2")
@@ -26,7 +26,7 @@ public class Sensor implements Serializable {
         this.name = name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

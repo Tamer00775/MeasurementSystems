@@ -1,14 +1,16 @@
-package kz.kartayev.Project3Client.DTO;
+package DTO;
 
-import kz.kartayev.Project3.models.Sensor;
 
 public class MeasurementDTO {
+
 
     private Double value;
 
     private Boolean isRaining;
 
-    private Sensor sensor;
+
+
+    private SensorDTO sensor;
 
     public double getValue() {
         return value;
@@ -26,11 +28,11 @@ public class MeasurementDTO {
         isRaining = raining;
     }
 
-    public Sensor getSensor() {
+    public SensorDTO getSensor() {
         return sensor;
     }
 
-    public void setSensor(Sensor sensor) {
+    public void setSensor(SensorDTO sensor) {
         this.sensor = sensor;
     }
 }

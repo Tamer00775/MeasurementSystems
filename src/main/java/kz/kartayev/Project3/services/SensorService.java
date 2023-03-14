@@ -25,5 +25,7 @@ public class SensorService {
     public void save(Sensor sensor){
         sensorRepository.save(sensor);
     }
-
+    public List<Sensor> findAll(){
+        return sensorRepository.findAll();
+    }
 }

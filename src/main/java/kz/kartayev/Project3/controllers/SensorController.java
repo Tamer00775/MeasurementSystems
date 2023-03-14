@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+import java.util.List;
+
 import static kz.kartayev.Project3.util.ErrorUtil.getFieldErrors;
 @RestController
 @RequestMapping("/sensors")
@@ -30,6 +32,11 @@ public class SensorController {
         this.modelMapper = modelMapper;
         this.sensorService = sensorService;
         this.validator = validator;
+    }
+
+    @GetMapping()
+    public List<Sensor> sensorList(){
+        return sensorService.findAll();
     }
 
     @PostMapping("/registration")

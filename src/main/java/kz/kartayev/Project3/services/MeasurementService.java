@@ -19,13 +19,14 @@ public class MeasurementService {
         this.measurementRepository = measurementRepository;
         this.sensorService = sensorService;
     }
-    @Transactional
-    public void save(Measurement measurement){
-        measurement.setLocalDate(LocalDate.now());
-        measurementRepository.save(measurement);
-    }
-
     public List<Measurement> findAll(){
         return measurementRepository.findAll();
     }
+    @Transactional
+    public void save(Measurement measurement){
+        measurement.setLocalDate(LocalDate.now());
+        measurement.setSensor(sensorService.findByName(measurement.getSensor().getName()).get());
+        measurementRepository.save(measurement);
+    }
+
 }

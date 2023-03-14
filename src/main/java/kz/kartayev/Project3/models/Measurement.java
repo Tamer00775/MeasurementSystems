@@ -5,21 +5,22 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
 @Table(name="measurements")
-public class Measurement {
+public class Measurement{
     @Id
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name="value")
     @NotNull(message = "Should be not null")
     @Min(value = -100, message = "value should be in range -100 and 100")
     @Max(value =  100, message = "value should be in range -100 and 100")
-    private double value;
+    private Double value;
 
     @Column(name="raining")
     @NotNull(message = "raining should be not empty")
@@ -37,7 +38,7 @@ public class Measurement {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -45,7 +46,7 @@ public class Measurement {
         return value;
     }
 
-    public void setValue(double value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 
@@ -53,7 +54,7 @@ public class Measurement {
         return raining;
     }
 
-    public void setRaining(boolean raining) {
+    public void setRaining(Boolean raining) {
         this.raining = raining;
     }
 

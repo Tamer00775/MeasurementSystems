@@ -9,27 +9,23 @@ import javax.validation.constraints.NotNull;
 
 public class MeasurementDTO {
 
-    @Column(name="value")
     @NotNull
     @Min(value = -100, message = "value should be in range -100 and 100")
     @Max(value =  100, message = "value should be in range -100 and 100")
-    private double value;
+    private Double value;
 
-    @Column(name="raining")
     @NotNull(message = "raining should be not empty")
     private Boolean isRaining;
 
-    @ManyToOne
 
     @NotNull(message = "SENSOR SHOULD BE NOT NULL")
-    @JoinColumn(name="sensor", referencedColumnName = "sensor_name")
     private Sensor sensor;
 
     public double getValue() {
         return value;
     }
 
-    public void setValue(double value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 
@@ -37,7 +33,7 @@ public class MeasurementDTO {
         return isRaining;
     }
 
-    public void setRaining(boolean raining) {
+    public void setRaining(Boolean raining) {
         isRaining = raining;
     }
 

@@ -38,13 +38,9 @@ public class MeasurementController {
         this.sensorService = sensorService;
     }
     @GetMapping
-    public List<MeasurementDTO> index(){
-        List<Measurement> measurements = measurementService.findAll();
-        List<MeasurementDTO> dto = new ArrayList<>();
-        for(int i = 0; i < measurements.size(); i++){
-            dto.add(convertToDTO(measurements.get(i)));
-        }
-        return dto;
+    public MeasurementsResponse index(){
+        return new MeasurementsResponse(measurementService.findAll().stream().map(this::convertToDTO)
+                .collect(Collectors.toList()));
     }
 
     @PostMapping("/add")
